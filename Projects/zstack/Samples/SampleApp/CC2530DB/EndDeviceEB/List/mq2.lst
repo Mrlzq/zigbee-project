@@ -1,0 +1,234 @@
+###############################################################################
+#                                                                             #
+# IAR C/C++ Compiler V8.20.2.41139 for 8051             29/Apr/2018  10:13:50 #
+# Copyright 2004-2013 IAR Systems AB.                                         #
+#                                                                             #
+#    Core               =  plain                                              #
+#    Code model         =  banked                                             #
+#    Data model         =  large                                              #
+#    Calling convention =  xdata reentrant                                    #
+#    Constant location  =  data_rom                                           #
+#    Dptr setup         =  1,16                                               #
+#                                                                             #
+#    Source file        =  D:\zigbee\毕设\lzq\Terminal\Projects\zstack\Sample #
+#                          s\SampleApp\Source\mq2.c                           #
+#    Command line       =  -f D:\zigbee\毕设\lzq\Terminal\Projects\zstack\Sam #
+#                          ples\SampleApp\CC2530DB\..\..\..\Tools\CC2530DB\f8 #
+#                          wEndev.cfg (-DCPU32MHZ -DROOT=__near_func          #
+#                          -DMAC_CFG_TX_DATA_MAX=3 -DMAC_CFG_TX_MAX=6         #
+#                          -DMAC_CFG_RX_MAX=3) -f D:\zigbee\毕设\lzq\Terminal #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\Tools\CC2530DB\f8wConfig.cfg (-DZIGBEEPRO       #
+#                          -DSECURE=0 -DZG_SECURE_DYNAMIC=0 -DREFLECTOR       #
+#                          -DDEFAULT_CHANLIST=0x00000800                      #
+#                          -DZDAPP_CONFIG_PAN_ID=0xFFF1                       #
+#                          -DNWK_START_DELAY=100 -DEXTENDED_JOINING_RANDOM_MA #
+#                          SK=0x007F -DBEACON_REQUEST_DELAY=100               #
+#                          -DBEACON_REQ_DELAY_MASK=0x00FF                     #
+#                          -DLINK_STATUS_JITTER_MASK=0x007F                   #
+#                          -DROUTE_EXPIRY_TIME=30 -DAPSC_ACK_WAIT_DURATION_PO #
+#                          LLED=3000 -DNWK_INDIRECT_MSG_TIMEOUT=7             #
+#                          -DMAX_RREQ_ENTRIES=8 -DAPSC_MAX_FRAME_RETRIES=3    #
+#                          -DNWK_MAX_DATA_RETRIES=2                           #
+#                          -DMAX_POLL_FAILURE_RETRIES=2 -DMAX_BCAST=9         #
+#                          -DAPS_MAX_GROUPS=16 -DMAX_RTG_ENTRIES=40           #
+#                          -DNWK_MAX_BINDING_ENTRIES=4                        #
+#                          -DMAX_BINDING_CLUSTER_IDS=4 "-DDEFAULT_KEY={0x01,  #
+#                          0x03, 0x05, 0x07, 0x09, 0x0B, 0x0D, 0x0F, 0x00,    #
+#                          0x02, 0x04, 0x06, 0x08, 0x0A, 0x0C, 0x0D}"         #
+#                          -DMAC_MAX_FRAME_SIZE=116                           #
+#                          -DZDNWKMGR_MIN_TRANSMISSIONS=20 "-DCONST=const     #
+#                          __code" -DGENERIC=__generic                        #
+#                          -DRFD_RCVC_ALWAYS_ON=FALSE -DPOLL_RATE=1000        #
+#                          -DQUEUED_POLL_RATE=100 -DRESPONSE_POLL_RATE=100)   #
+#                          -DREJOIN_POLL_RATE=440 D:\zigbee\毕设\lzq\Terminal #
+#                          \Projects\zstack\Samples\SampleApp\Source\mq2.c    #
+#                          -D NWK_AUTO_POLL -D ZTOOL_P1 -D MT_TASK -D         #
+#                          MT_SYS_FUNC -D MT_ZDO_FUNC -D                      #
+#                          xLCD_SUPPORTED=DEBUG -lC                           #
+#                          D:\zigbee\毕设\lzq\Terminal\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\EndDeviceEB\List\ -lA         #
+#                          D:\zigbee\毕设\lzq\Terminal\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\EndDeviceEB\List\             #
+#                          --diag_suppress Pe001,Pa010 -o                     #
+#                          D:\zigbee\毕设\lzq\Terminal\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\EndDeviceEB\Obj\ -e           #
+#                          --no_code_motion --debug --core=plain --dptr=16,1  #
+#                          --data_model=large --code_model=banked             #
+#                          --calling_convention=xdata_reentrant               #
+#                          --place_constants=data_rom --nr_virtual_regs 16    #
+#                          -I D:\zigbee\毕设\lzq\Terminal\Projects\zstack\Sam #
+#                          ples\SampleApp\CC2530DB\ -I                        #
+#                          D:\zigbee\毕设\lzq\Terminal\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\..\Source\ -I                 #
+#                          D:\zigbee\毕设\lzq\Terminal\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\..\..\..\ZMain\TI2530DB\ -I   #
+#                          D:\zigbee\毕设\lzq\Terminal\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\..\..\..\..\..\Components\hal #
+#                          \include\ -I D:\zigbee\毕设\lzq\Terminal\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\hal\target\CC2530EB\ -I                  #
+#                          D:\zigbee\毕设\lzq\Terminal\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\..\..\..\..\..\Components\mac #
+#                          \include\ -I D:\zigbee\毕设\lzq\Terminal\Projects\ #
+#                          zstack\Samples\SampleApp\CC2530DB\..\..\..\..\..\C #
+#                          omponents\mac\high_level\ -I                       #
+#                          D:\zigbee\毕设\lzq\Terminal\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\..\..\..\..\..\Components\mac #
+#                          \low_level\srf04\ -I D:\zigbee\毕设\lzq\Terminal\P #
+#                          rojects\zstack\Samples\SampleApp\CC2530DB\..\..\.. #
+#                          \..\..\Components\mac\low_level\srf04\single_chip\ #
+#                           -I D:\zigbee\毕设\lzq\Terminal\Projects\zstack\Sa #
+#                          mples\SampleApp\CC2530DB\..\..\..\..\..\Components #
+#                          \mt\ -I D:\zigbee\毕设\lzq\Terminal\Projects\zstac #
+#                          k\Samples\SampleApp\CC2530DB\..\..\..\..\..\Compon #
+#                          ents\osal\include\ -I D:\zigbee\毕设\lzq\Terminal\ #
+#                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\. #
+#                          .\..\..\Components\services\saddr\ -I              #
+#                          D:\zigbee\毕设\lzq\Terminal\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\..\..\..\..\..\Components\ser #
+#                          vices\sdata\ -I D:\zigbee\毕设\lzq\Terminal\Projec #
+#                          ts\zstack\Samples\SampleApp\CC2530DB\..\..\..\..\. #
+#                          .\Components\stack\af\ -I                          #
+#                          D:\zigbee\毕设\lzq\Terminal\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\..\..\..\..\..\Components\sta #
+#                          ck\nwk\ -I D:\zigbee\毕设\lzq\Terminal\Projects\zs #
+#                          tack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com #
+#                          ponents\stack\sapi\ -I D:\zigbee\毕设\lzq\Terminal #
+#                          \Projects\zstack\Samples\SampleApp\CC2530DB\..\..\ #
+#                          ..\..\..\Components\stack\sec\ -I                  #
+#                          D:\zigbee\毕设\lzq\Terminal\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\..\..\..\..\..\Components\sta #
+#                          ck\sys\ -I D:\zigbee\毕设\lzq\Terminal\Projects\zs #
+#                          tack\Samples\SampleApp\CC2530DB\..\..\..\..\..\Com #
+#                          ponents\stack\zdo\ -I D:\zigbee\毕设\lzq\Terminal\ #
+#                          Projects\zstack\Samples\SampleApp\CC2530DB\..\..\. #
+#                          .\..\..\Components\zmac\ -I                        #
+#                          D:\zigbee\毕设\lzq\Terminal\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\..\..\..\..\..\Components\zma #
+#                          c\f8w\ -Ohz                                        #
+#    List file          =  D:\zigbee\毕设\lzq\Terminal\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\EndDeviceEB\List\mq2.lst      #
+#    Object file        =  D:\zigbee\毕设\lzq\Terminal\Projects\zstack\Sample #
+#                          s\SampleApp\CC2530DB\EndDeviceEB\Obj\mq2.r51       #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+D:\zigbee\毕设\lzq\Terminal\Projects\zstack\Samples\SampleApp\Source\mq2.c
+      1          #include <ioCC2530.h>
+
+   \                                 In  segment SFR_AN, at 0x88
+   \   union <unnamed> volatile __sfr _A_TCON
+   \                     _A_TCON:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xb6
+   \   unsigned char volatile __sfr ADCCON3
+   \                     ADCCON3:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xba
+   \   unsigned char volatile __sfr ADCL
+   \                     ADCL:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xbb
+   \   unsigned char volatile __sfr ADCH
+   \                     ADCH:
+   \   000000                DS 1
+
+   \                                 In  segment SFR_AN, at 0xfd
+   \   unsigned char volatile __sfr P0DIR
+   \                     P0DIR:
+   \   000000                DS 1
+      2          #include "OnBoard.h"
+      3          #include "hal_adc.h"
+      4          #include "mq2.h"
+      5          
+
+   \                                 In  segment BANKED_CODE, align 1, keep-with-next
+      6          uint16 ReadGasData( void )
+   \                     ReadGasData:
+      7          {
+   \   000000                ; Saved register size: 0
+   \   000000                ; Auto size: 0
+      8            uint16 reading = 0;
+      9            
+     10            P0DIR &= ~0x40;  // 设置P0.6为输入方式
+   \   000000   53FDBF       ANL     0xfd,#0xbf
+     11            asm("NOP");asm("NOP");
+   \   000003   00           NOP
+   \   000004   00           NOP
+     12            
+     13            /* Clear ADC interrupt flag */
+     14            ADCIF = 0;
+   \   000005   C28D         CLR     0x88.5
+     15            
+     16            ADCCON3 = (0x40 | HAL_ADC_DEC_064 | HAL_ADC_CHANNEL_6);
+   \   000007   75B646       MOV     0xb6,#0x46
+     17            
+     18            /* Wait for the conversion to finish */
+     19            while ( !ADCIF );
+   \                     ??ReadGasData_0:
+   \   00000A   A28D         MOV     C,0x88.5
+   \   00000C   50FC         JNC     ??ReadGasData_0
+     20            
+     21            asm("NOP");asm("NOP");
+   \   00000E   00           NOP
+   \   00000F   00           NOP
+     22            
+     23            /* Read the result */
+     24            reading = ADCL;
+   \   000010   E5BA         MOV     A,0xba
+     25            reading |= (int16) (ADCH << 8);
+     26            reading >>= 8;
+     27            
+     28            return reading;
+   \   000012   E5BB         MOV     A,0xbb
+   \   000014   FA           MOV     R2,A
+   \   000015   E4           CLR     A
+   \   000016   FB           MOV     R3,A
+   \   000017   02....       LJMP    ?BRET
+   \   00001A                REQUIRE P0DIR
+   \   00001A                REQUIRE _A_TCON
+   \   00001A                REQUIRE ADCCON3
+   \   00001A                REQUIRE ADCL
+   \   00001A                REQUIRE ADCH
+     29          }
+
+   \                                 In  segment BANK_RELAYS, align 1
+   \                     ??ReadGasData?relay:
+   \   000000   12....       LCALL   ?BDISPATCH
+   \   000003   ......       DC24    ReadGasData
+     30          
+
+   Maximum stack usage in bytes:
+
+   ISTACK PSTACK XSTACK Function
+   ------ ------ ------ --------
+       0      0      0  ReadGasData
+
+
+   Segment part sizes:
+
+   Bytes  Function/Label
+   -----  --------------
+       6  ??ReadGasData?relay
+       1  ADCCON3
+       1  ADCH
+       1  ADCL
+       1  P0DIR
+      26  ReadGasData
+       1  _A_TCON
+
+ 
+ 26 bytes in segment BANKED_CODE
+  6 bytes in segment BANK_RELAYS
+  5 bytes in segment SFR_AN
+ 
+ 32 bytes of CODE memory
+  0 bytes of DATA memory (+ 5 bytes shared)
+
+Errors: none
+Warnings: none
